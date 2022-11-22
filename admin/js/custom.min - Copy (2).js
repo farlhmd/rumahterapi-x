@@ -19,7 +19,7 @@ function getUrlParams(dParam) {
 
 
 
-var Welly = function(){
+var Rumah Terapi X = function(){
 	/* Search Bar ============ */
 	siteUrl = '';
 	
@@ -326,7 +326,7 @@ var Welly = function(){
 /* Document.ready Start */	
 jQuery(document).ready(function() {
     'use strict';
-	Welly.init();
+	Rumah Terapi X.init();
 	
 });
 /* Document.ready END */
@@ -334,13 +334,13 @@ jQuery(document).ready(function() {
 /* Window Load START */
 jQuery(window).on('load',function () {
 	'use strict'; 
-	Welly.load();
+	Rumah Terapi X.load();
 	
 });
 /*  Window Load END */
 /* Window Resize START */
 jQuery(window).on('resize',function () {
 	'use strict'; 
-	Welly.resize();
+	Rumah Terapi X.resize();
 });
 /*  Window Resize END */
