@@ -735,7 +735,7 @@
 						gridLines: !1,
 						scaleLabel: {
 							display: !0,
-							labelString: "Month"
+							labelString: "Bulan"
 						}
 					}],
 					yAxes: [{
@@ -820,7 +820,7 @@
 						gridLines: !1,
 						scaleLabel: {
 							display: !0,
-							labelString: "Month"
+							labelString: "Bulan"
 						}
 					}],
 					yAxes: [{
@@ -902,7 +902,7 @@
 						gridLines: !1,
 						scaleLabel: {
 							display: !0,
-							labelString: "Month"
+							labelString: "Bulan"
 						}, 
 						ticks: {
 							max: 30, 
