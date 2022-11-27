@@ -64,7 +64,7 @@
                 end: n,
                 className: "bg-danger"
             }, {
-                title: "Hot dog",
+                title: "Lanjutan Terapis",
                 start: new Date(e.now() + 338e6),
                 className: "bg-primary"
             }],
