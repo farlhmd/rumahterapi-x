@@ -1002,7 +1002,11 @@
 								</div>
 							</div>
 						</div>
-						
+
+						<div style="margin-left: 25px">
+							<a class="btn btn-primary btn-grafik-on">Grafik</a>
+							<a class="btn btn-primary btn-grafik-off" style="display: none">Tabel</a>
+						</div>
 
 					</div>
 
@@ -1031,7 +1035,8 @@
 				</div>
 				<div class="row">
 					<div class="col-xl-12">
-						<div class="table-responsive card-table">
+						<!-- laporan tabel -->
+						<div class="table-responsive card-table laporan-tabel">
 							<table id="example5" class="display dataTablesCard white-border table-responsive-xl">
 								<thead>
 									<tr>
@@ -1287,6 +1292,11 @@
 								</tbody>
 							</table>
 						</div>
+
+						<!-- laporan grafik -->
+						<div class="laporan-grafik">
+
+						</div>
 					</div>
 				</div>
 			</div>
@@ -1349,6 +1359,23 @@
 
 			});
 		})(jQuery);
+	</script>
+
+	<script>
+		$(document).ready(function () {
+			$(".btn-grafik-on").click(function () {
+				$(".laporan-tabel").hide();
+				$(".laporan-grafik").show();
+				$(".btn-grafik-on").hide();
+				$(".btn-grafik-off").show();
+			});
+			$(".btn-grafik-off").click(function () {
+				$(".laporan-tabel").show();
+				$(".laporan-grafik").hide();
+				$(".btn-grafik-off").hide();
+				$(".btn-grafik-on").show();
+			});
+		});
 	</script>
 </body>
 
