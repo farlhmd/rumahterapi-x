@@ -1595,7 +1595,8 @@
 													data-target="#reschedule" class="text-warning mr-3 mb-2">
 													Reschedule
 												</a>
-												<a href="#" class="text-danger mr-3 mb-2">
+												<a href="javascript:void()" data-toggle="modal"
+												data-target="#batal"  class="text-danger mr-3 mb-2">
 													Cancel
 													</a>
 											</div>
@@ -1612,7 +1613,8 @@
 													data-target="#reschedule" class="text-warning mr-3 mb-2">
 													Reschedule
 												</a>
-												<a href="#" class="text-danger mr-3 mb-2">
+												<a href="javascript:void()" data-toggle="modal"
+												data-target="#batal"  class="text-danger mr-3 mb-2">
 													Cancel
 													</a>
 											</div>
@@ -1629,7 +1631,8 @@
 													data-target="#reschedule" class="text-warning mr-3 mb-2">
 													Reschedule
 												</a>
-												<a href="#" class="text-danger mr-3 mb-2">
+												<a href="javascript:void()" data-toggle="modal"
+												data-target="#batal" class="text-danger mr-3 mb-2">
 													Cancel
 													</a>
 											</div>
@@ -1645,7 +1648,8 @@
 													data-target="#reschedule" class="text-warning mr-3 mb-2">
 													Reschedule
 												</a>
-												<a href="#" class="text-danger mr-3 mb-2">
+												<a href="javascript:void()" data-toggle="modal"
+												data-target="#batal"  class="text-danger mr-3 mb-2">
 													Cancel
 													</a>
 												
@@ -1664,15 +1668,16 @@
 														<p class="mb-1">Pilih Tanggal</p>
 														<input name="datepicker" class="datepicker-default form-control" id="datepicker">
 													</div>
+													<div class="card-body">
+														<label>Jam Terapi</label>
+														<div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">
+															<input type="text" class="form-control" value="pilih jam"> <span class="input-group-append"><span class="input-group-text"><i
+																		class="fa fa-clock-o"></i></span></span>
+														</div>
+													</div>
 												</div>
 												  <div class="col-md-6 col-xl-3 col-xxl-6 mb-3">
-													<div class="card-body">
-													<label>Jam Terapi</label>
-													<div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">
-														<input type="text" class="form-control" value="pilih jam"> <span class="input-group-append"><span class="input-group-text"><i
-																	class="fa fa-clock-o"></i></span></span>
-													</div>
-													</div>
+													
 													</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-default waves-effect"
@@ -1688,12 +1693,17 @@
 											</div>
 										</div>
 									</div>
-									<div class="modal fade none-border" id="konfirmasi-batal">
+									<div class="modal fade none-border" id="batal">
 										<div class="modal-dialog">
 											<div class="modal-content">
 												<div class="modal-header">
-													<h4 class="modal-title"><strong>Konfirmasi Janji Terapi</strong></h4>
+													<h4 class="modal-title"><strong>Konfirmasi Pembatalan Terapi</strong></h4>
 												</div>
+												
+													<div class="card-body">
+														<p class="mb-1">Yakin ingin membatalkan terapi?</p>
+														
+													</div>
 												
 												<div class="modal-footer">
 													<button type="button" class="btn btn-default waves-effect"
@@ -1701,9 +1711,9 @@
 														Tutup
 													</button>
 													<button type="button"
-														class="btn btn-success waves-effect waves-light save-category"
+														class="btn btn-danger waves-effect waves-light save-category"
 														data-dismiss="modal">
-														Simpan
+														Batalkan
 													</button>
 												</div>
 											</div>
