@@ -19,9 +19,8 @@ function loadTable() {
           trHTML += '<td>'+attributes['start_date']+'</td>';
           trHTML += '<td>'+attributes['end_date']+'</td>';
           
-
-            trHTML += '<td><a class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>';
-
+            trHTML += '<td><a class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-eye"></i></a>';
+            trHTML += '<a class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>';
             trHTML += '<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a></td>';
           // trHTML += '<td><button type="button" class="btn btn-outline-secondary" onclick="showUserEditBox('+object['id']+')">Edit</button>';
           // trHTML += '<button type="button" class="btn btn-outline-danger" onclick="userDelete('+object['id']+')">Del</button></td>';
