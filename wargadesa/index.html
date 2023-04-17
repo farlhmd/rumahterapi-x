@@ -1,94 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manud Jaya Satu Pintu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Manud Jaya Satu Pintu</title>
-	<link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <div class="container">
+      <div class="login">
+        <form>
+          <h1>Login</h1>
+          <hr />
+          <p>Selamat Datang Dilayanan Satu Pintu Desa Manud Jaya</p>
+          <label for="email">Email</label>
+          <input type="text" id="email" placeholder="Masukkan email anda" />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Masukkan Password anda"
+          />
+          <button
+            type="button"
+            onclick="login()"
+            style="
+              display: block;
+              border: none;
+              text-align: center;
+              outline: none;
+              padding: 8px;
+              text-decoration: none;
+              width: 252px;
+              color: #fff;
+              font-size: 16px;
+              cursor: pointer;
+              margin-top: 20px;
+              border-radius: 5px;
+              background: #008e58;
+            "
+          >
+            Login
+          </button>
+          <p>
+            <a
+              href="./Page/Forget Password/index.html"
+              style="color: grey; text-decoration: none"
+              >Forgot Password?</a
+            >
+          </p>
+          <p>
+            <a href="./register.html" style="color: grey; text-decoration: none"
+              >Register</a
+            >
+          </p>
+          <p id="error-message" style="display: none; color: red">
+            Invalid email or password
+          </p>
+        </form>
+      </div>
+      <div class="right">
+        <img src="./images/logo-full.png" alt="" style="width: 400px" />
+      </div>
+    </div>
 
-<body>
-	<div class="container">
-		<div class="login">
-			<form>
-				<h1>Login</h1>
-				<hr>
-				<p>Selamat Datang Dilayanan Satu Pintu Desa Manud Jaya</p>
-				<label for="email">Email</label>
-				<input type="text" id="email" placeholder="Masukkan email anda">
-				<label for="password">Password</label>
-				<input type="password" id="password" placeholder="Masukkan Password anda">
-				<button type="button" onclick="login()" style="
-					display: block;
-					border: none;
-					text-align: center;
-					outline: none;
-					padding: 8px;
-					text-decoration: none;
-					width: 252px;
-					color: #fff;
-					font-size: 16px;
-					cursor: pointer;
-					margin-top: 20px;
-					border-radius: 5px;
-					background: #008e58;">Login</button>
-				<p>
-					<a href="./Page/Forget Password/index.html" style="
-						color: grey;
-						text-decoration: none;
-					">Forgot Password?</a>
-				</p>
-                <p>
-					<a href="./register.html" style="
-						color: grey;
-						text-decoration: none;
-					">Register</a>
-				</p>
-				<p id="error-message" style="display: none; color: red;">Invalid email or password</p>
-			</form>
-		</div>
-		<div class="right">
-			<img src="./images/logo-full.png" alt="" style="width: 400px;">
-		</div>
-	</div>
+    <script>
+      function login() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-	<script>
-		function login() {
-			const email = document.getElementById('email').value;
-			const password = document.getElementById('password').value;
-
-			fetch('https://tupaii.my.id/api/auth/local', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
-					identifier: email,
-					password: password
-				})
-			})
-			.then(response => {
-				if (response.ok) {
-					return response.json();
-				} else {
-					throw new Error('Invalid email or password');
-				}
-			})
-			.then(data => {
-				console.log(data);
-				// Save the JWT to a cookie
-				document.cookie = `accessToken=${data.jwt}; path=/; max-age=86400;`;
-				window.location.href = './LandingPageWarga/permintaanhalamanan.html';
-			})
-			.catch(error => {
-				console.error(error);
-				// Display an error message
-				document.getElementById('error-message').style.display = 'block';
-			});
-		}
-	</script>
-</body>
-
+        fetch("https://tupaii.my.id/api/auth/local", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            identifier: email,
+            password: password,
+          }),
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error("Invalid email or password");
+            }
+          })
+          .then((data) => {
+            console.log(data);
+            // Save the JWT to a cookie
+            document.cookie = `accessToken=${data.jwt}; path=/;`;
+            document.cookie = `email=${data.user.email}; path=/;`;
+            document.cookie = `userId=${data.user.id}; path=/;`;
+            document.cookie = `username=${data.user.username}; path=/;`;
+            window.location.href =
+              "./LandingPageWarga/permintaanhalamanan.html";
+          })
+          .catch((error) => {
+            console.error(error);
+            // Display an error message
+            document.getElementById("error-message").style.display = "block";
+          });
+      }
+    </script>
+  </body>
 </html>
