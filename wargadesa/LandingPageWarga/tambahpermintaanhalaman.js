@@ -4,7 +4,6 @@ function addLayanan() {
     const niklayanan = document.getElementById("niklayanan").value;
     const emaillayanan = document.getElementById("emaillayanan").value;
     const jenislayanan = document.getElementById("jenislayanan").value;
-    const statuslayanan = document.getElementById("statuslayanan").value;
     const filelayanan = document.getElementById("filelayanan").files[0];
 
     var formdata = new FormData();
@@ -14,7 +13,7 @@ function addLayanan() {
             "nik": niklayanan,
             "email": emaillayanan,
             "applicationType": jenislayanan,
-            "status":statuslayanan,
+            "status":"Diajukan",
             "postedBy": {"connect":[4]}
           };
     formdata.append("data", JSON.stringify(json));
