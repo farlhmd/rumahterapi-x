@@ -14,7 +14,7 @@ function formatDate(date) {
 
 function loadTable() {
     const xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "https://tupaii.my.id/api/kebijakans");
+    xhttp.open("GET", "https://tupaii.my.id/api/services?filters[status][$containsi]=Diajukan&populate=*");
     xhttp.setRequestHeader('Authorization', 'Bearer ' + "c5c7e16ef592b8e9126105254b4acb986a5be0e8c63c56539d7c86b4b95f1afc8376edb469d3e2a4acaa34d2bff0b6110d5a1cac19755429b4b4c74d49a35639f57c1ddf9e671055066c976d30442ffc3d19f64d08e47d7da6b97ad472723ce74c66350f4f6a86b593c385a84d2fd428d620ebd73ab6f866698dca0b87c22944");
     xhttp.send();
     xhttp.onreadystatechange = function() {
@@ -38,13 +38,14 @@ function loadTable() {
           trHTML += '<tr>'; 
           trHTML += '<td>'+i+'</td>';
           // trHTML += '<td class="sorting_'+object['id']+'"> <div class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" id="customCheckBox3" required=""> <label class="custom-control-label" for="customCheckBox3"></label></div></td>';
-          trHTML += '<td>'+attributes['title_kebijakan']+'</td>';
+          trHTML += '<td>'+attributes['applicant']+'</td>';
 
           // trHTML += '<td>'+attributes['start_date']+'</td>';
           trHTML += '<td>'+formatDate(buat)+'</td>';
-                    trHTML += '<td>'+formatDate(publish)+'</td>';
+                    // trHTML += '<td>'+formatDate(publish)+'</td>';
           
-
+            trHTML += '<td>'+attributes['applicationType']+'</td>';
+            trHTML += '<td>'+attributes['status']+'</td>';
             trHTML += '<td><a class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>';
 
             trHTML += '<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a></td>';
