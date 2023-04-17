@@ -10,11 +10,13 @@ function loadTable() {
         console.log(objects.data);
         for (let object of objects.data) { 
             const attributes = object['attributes'];
+            const product = object['attributes']['produk']['data'][0];
             console.log(attributes);
           trHTML += '<tr>'; 
           trHTML += '<td>'+object['id']+'</td>';
           // trHTML += '<td class="sorting_'+object['id']+'"> <div class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" id="customCheckBox3" required=""> <label class="custom-control-label" for="customCheckBox3"></label></div></td>';
           trHTML += '<td>'+attributes['name']+'</td>';
+          trHTML += '<td> <img src="https://tupaii.my.id'+  product['attributes']['formats']['small']['url'] +'" alt="Test Image" style=" height: 60px;"></img></td>';
           trHTML += '<td>'+attributes['price']+'</td>';
           trHTML += '<td>'+attributes['description']+'</td>';
           trHTML += '<td>'+attributes['info_umkm']['data']['attributes']['nama_umkm']+'</td>';

@@ -15,6 +15,9 @@ function loadTable() {
           trHTML += '<td>'+object['id']+'</td>';
           // trHTML += '<td class="sorting_'+object['id']+'"> <div class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" id="customCheckBox3" required=""> <label class="custom-control-label" for="customCheckBox3"></label></div></td>';
           trHTML += '<td>'+attributes['nama_umkm']+'</td>';
+          trHTML += '<td> <img src="https://tupaii.my.id'+attributes['foto_umkm']['data'][0]['attributes']['formats']['large']['url'] +'" alt="Test Image" style=" height: 60px;"></img></td>';
+
+
           trHTML += '<td>'+attributes['deskripsi_umkm']+'</td>';
           // trHTML += '<td>'+attributes['start_date']+'</td>';
           // trHTML += '<td>'+attributes['end_date']+'</td>';
